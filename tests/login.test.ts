@@ -23,7 +23,7 @@ test.describe('Login Functionality', () => {
         await expect(errorMessage).toBeVisible();
     });
 
-    test('should show error message with malformed emial', async ({ page }) => {
+    test('should show error message with malformed email', async ({ page }) => {
         const username = 'testexample.com';
         await loginPage.navigate();
         await loginPage.login(username, '');

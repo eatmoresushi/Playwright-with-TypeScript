@@ -1,4 +1,5 @@
-import { test, expect } from '@playwright/test';
+import { expect } from '@playwright/test';
+import { test } from '../fixtures/fixtures';
 import { LoginPage } from '../pages/LoginPage';
 test.describe('Login Functionality', () => {
     let loginPage: LoginPage;
@@ -6,7 +7,7 @@ test.describe('Login Functionality', () => {
         // Initialize the LoginPage class
         loginPage = new LoginPage(page);
         // Navigate to the base URL
-        await page.goto('https://www.ubank.com.au/');
+        // await page.goto('https://www.ubank.com.au/');
     });
 
     test('should show error message with invalid credentials', async ({ page }) => {

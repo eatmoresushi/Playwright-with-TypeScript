@@ -1,6 +1,6 @@
-import { PlaywrightTestConfig } from '@playwright/test';
+import { defineConfig } from '@playwright/test';
 
-const config: PlaywrightTestConfig = {
+export default defineConfig({
     testDir: './tests',
     timeout: 30000,
     forbidOnly: !!process.env.CI,
@@ -13,6 +13,4 @@ const config: PlaywrightTestConfig = {
         screenshot: 'only-on-failure',
         trace: 'on-first-retry',
     },
-};
-
-export default config;
+});

@@ -1,4 +1,5 @@
-import { test, expect } from '@playwright/test';
+import { expect } from '@playwright/test';
+import { test } from '../fixtures/fixtures';
 import { HomePage } from '../pages/HomePage';
 
 test.describe('Home Page Functionality', () => {
@@ -7,7 +8,7 @@ test.describe('Home Page Functionality', () => {
         // Initialize the HomePage class
         homePage = new HomePage(page);
         // Navigate to the base URL
-        await page.goto('https://www.ubank.com.au/');
+        // await page.goto('https://www.ubank.com.au/');
     });
 
     test('header menu should contains following options', async ({ page }) => {

@@ -1,11 +1,11 @@
-import { Page, Locator, expect } from '@playwright/test';
+import { Page, Locator} from '@playwright/test';
 
 export class LoginPage {
-    protected readonly page: Page;
-    private readonly loginButton: Locator;
-    private readonly usernameInput: Locator;
-    private readonly nextButton: Locator;
-    private readonly passwordInput: Locator;
+    readonly page: Page;
+    readonly loginButton: Locator;
+    readonly usernameInput: Locator;
+    readonly nextButton: Locator;
+    readonly passwordInput: Locator;
     constructor(page: Page) {
         this.page = page;
         this.loginButton = page.getByRole('link', { name: 'Log in' });
@@ -16,7 +16,6 @@ export class LoginPage {
 
     async navigate() {
         await this.loginButton.click();
-        await expect(this.usernameInput).toBeVisible();
     }
 
     async login(username: string, password: string) {

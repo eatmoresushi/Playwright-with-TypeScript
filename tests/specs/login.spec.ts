@@ -14,6 +14,7 @@ test.describe('Login Functionality', () => {
         const password = '12345678';
         // Navigate to the login page
         await loginPage.navigate();
+        await expect(loginPage.usernameInput).toBeVisible();
         // Perform login with invalid credentials
         await loginPage.login(username, password);
         // Check for the error message
@@ -26,6 +27,7 @@ test.describe('Login Functionality', () => {
     test('should show error message with malformed email', async ({ page }) => {
         const username = 'testexample.com';
         await loginPage.navigate();
+        await expect(loginPage.usernameInput).toBeVisible();
         await loginPage.login(username, '');
         // Check for the error message
         const errorMessage = page.getByText('Please enter a valid email or mobile number.');

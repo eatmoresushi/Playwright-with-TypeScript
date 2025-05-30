@@ -2,11 +2,8 @@
 
 Learning Playwright and TypeScript by doing a web automation project using these two.
 
-Website to test: https://www.ubank.com.au/
+The website under test is the dummy e-commerce site provided by LambdaTest: https://ecommerce-playground.lambdatest.io/
 
 Covered test scenarios:
-- Login
-    - should show error message with invalid credentials
-    - should show error message with malformed email
-- Home
-    - header menu should contains correct options
+- my account
+    - register a new account

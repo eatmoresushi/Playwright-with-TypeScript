@@ -9,7 +9,7 @@ export default defineConfig({
     use: {
         headless: false,
         viewport: { width: 1280, height: 720 },
-        baseURL: 'https://www.ubank.com.au/',
+        baseURL: 'https://ecommerce-playground.lambdatest.io/',
         screenshot: 'only-on-failure',
         trace: 'on-first-retry',
     },

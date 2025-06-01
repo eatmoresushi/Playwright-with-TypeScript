@@ -11,4 +11,10 @@ export default defineConfig([
   tseslint.configs.recommended,
   tseslint.configs.recommendedTypeChecked,
   pluginReact.configs.flat.recommended,
+  {
+    files: ["**/*.{ts,tsx}"],
+    rules: {
+      "@typescript-eslint/no-floating-promises": "error"
+    }
+  }
 ]);

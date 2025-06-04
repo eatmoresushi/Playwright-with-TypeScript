@@ -6,6 +6,8 @@ export class HomePage {
     readonly registerButton: Locator;
     readonly loginButton: Locator;
     readonly dashboardButton: Locator;
+    readonly searchInput: Locator;
+    readonly searchButton: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -13,6 +15,8 @@ export class HomePage {
         this.registerButton = page.getByRole('link', { name: 'Register' });
         this.loginButton = page.getByRole('link', { name: 'Login' });
         this.dashboardButton = page.getByRole('link', { name: 'Dashboard' });
+        this.searchInput = page.getByRole('textbox', { name: 'Search For Products' })
+        this.searchButton = page.getByRole('button', { name: 'Search' });
     }
 
     async navigateToSignup() {
@@ -28,5 +32,10 @@ export class HomePage {
     async navigateToDashboard() {
         await this.myAccountButton.hover();
         await this.dashboardButton.click();
+    }
+
+    async searchForProduct(productName: string) {
+        await this.searchInput.fill(productName);
+        await this.searchButton.click();
     }
 }

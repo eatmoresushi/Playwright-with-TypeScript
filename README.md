@@ -18,6 +18,7 @@ All user credentials and variable input values are stored in a dedicated JSON fi
 - Linting with ESLint:
 Integrated ESLint into the development workflow to automatically detect and prevent code errors and style violations.
 ### Project Structure
+```
 ├── pages/              # Page object classes for each application page
 ├── specs/              # Test files grouped by feature
 ├── fixtures/           # Custom Playwright fixtures for shared setup
@@ -25,7 +26,7 @@ Integrated ESLint into the development workflow to automatically detect and prev
 ├── .eslintrc.json      # ESLint configuration
 ├── playwright.config.ts
 └── README.md
-
+```
 ### Getting Started
 1.	Install dependencies
 `npm install`

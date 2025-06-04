@@ -2,8 +2,6 @@ import { Page, Locator } from '@playwright/test';
 
 export class SignupPage {
     readonly page: Page;
-    readonly myAccountButton: Locator;
-    readonly registerButton: Locator;
     readonly firstnameInput: Locator;
     readonly lastnameInput: Locator;
     readonly emailInput: Locator;
@@ -12,12 +10,10 @@ export class SignupPage {
     readonly confirmPasswordInput: Locator;
     readonly newsletterCheckbox: Locator;
     readonly privacyPolicyCheckbox: Locator;
-readonly registerButtonSubmit: Locator;
+    readonly registerButtonSubmit: Locator;
 
     constructor(page: Page) {
         this.page = page;
-        this.myAccountButton = page.getByRole('button', { name: /My account/i });
-        this.registerButton = page.getByRole('link', { name: 'Register' });
         this.firstnameInput = page.getByRole('textbox', { name: 'First Name*' });
         this.lastnameInput = page.getByRole('textbox', { name: 'Last Name*' });
         this.emailInput = page.getByRole('textbox', { name: 'E-Mail*' });
@@ -27,11 +23,6 @@ readonly registerButtonSubmit: Locator;
         this.newsletterCheckbox = page.getByText('No', { exact: true });
         this.privacyPolicyCheckbox = page.getByText('I have read and agree to the');
         this.registerButtonSubmit = page.getByRole('button', { name: 'Continue' });
-    }
-
-    async navigateToSignup() {
-        await this.myAccountButton.hover();
-        await this.registerButton.click();
     }
 
     async fillSignupForm(firstName: string, lastName: string, email: string, phone: string, password: string) {

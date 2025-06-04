@@ -1,0 +1,12 @@
+{
+    "users": [
+        {
+            "username": "john.doe.1749021565609@example.com",
+            "password": "SecurePassword123"
+        },
+        {
+            "username": "john.doe.1749021566747@example.com",
+            "password": "SecurePassword123"
+        }
+    ]
+}
